@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { getSearchStr } from 'redux/selectors';
-import { changeSearchStr } from '../../redux/searchSlice';
+import { getSearchStr } from 'redux/search/searchSelectors';
+import { changeSearchStr } from 'redux/search/searchSlice';
 import css from './Filter.module.css';
 
 export const Filter = () => {
