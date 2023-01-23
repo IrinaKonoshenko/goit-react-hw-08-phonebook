@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { selectToken } from 'redux/auth/authSelectors';
+import { selectIsAuth } from 'redux/auth/authSelectors';
 import { Navigate } from 'react-router-dom';
 
 export const PublicRoute = ({ children, restricted = false }) => {
-  const token = useSelector(selectToken);
-  const shouldRedirect = token && restricted;
+  const isAuth = useSelector(selectIsAuth);
+  const shouldRedirect = isAuth && restricted;
   return shouldRedirect ? <Navigate to="/contacts" /> : children;
 };
